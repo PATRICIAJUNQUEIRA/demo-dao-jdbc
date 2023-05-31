@@ -31,11 +31,17 @@ public class Program {
 			System.out.println(obj);
 		}
 
-		System.out.println("\n=== TEST 4: seller insert =====");
-		Seller newSeller = new Seller(null,  "Greg",  "greg@gmail.com",  new Date() , 4000.0, department);
-		Seller newSeller2 = new Seller(null, "Julia", "julia@gmail.com", new Date() , 5000.0, department);
-		Seller newSeller3 = new Seller(null, "Luiz", "luiz@gmail.com", new Date() , 9.000, department);
+		System.out.println("\n=== TEST 4: seller INSERT =====");
+		Seller newSeller = new Seller(null,  "Greg",  "greg@gmail.com",  new Date(), 4000.0, department);
+		Seller newSeller2 = new Seller(null, "Julia", "julia@gmail.com", new Date(), 5000.0, department);
+		Seller newSeller3 = new Seller(null, "Luiz",  "luiz@gmail.com",  new Date(), 9.000,  department);
 
+		System.out.println("\n=== TEST 5: seller UPDATE =====");
+		seller = sellerDao.findById(1);
+		seller.setName("Luiz Fernando");
+		sellerDao.update(seller);
+		System.out.println("Update completed!");
+		
 		
 		sellerDao.insert(newSeller);
 		sellerDao.insert(newSeller2);
